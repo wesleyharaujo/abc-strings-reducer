@@ -4,7 +4,7 @@ function result(string, stringProcessor, rules) {
     originalString: string,
     finalString:  '',
     finalStringLength: 0
-  }
+  };
   
   function repeat(string) {
     const newString = stringProcessor(string, rules);
@@ -13,15 +13,15 @@ function result(string, stringProcessor, rules) {
       return repeat(newString);
     }
 
-    return newString
+    return newString;
   }
   
   const newString = repeat(string);
 
   result.finalString = newString;
-  result.finalStringLength = newString.length
+  result.finalStringLength = newString.length;
 
   return result;
 }
 
-module.exports = result
+module.exports = result;

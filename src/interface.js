@@ -9,7 +9,7 @@ async function interfaceCli(){
 
   return new Promise((resolve) => {
     return (
-      reader.question("Informe a string a ser reduzida.\n", async (response) => {
+      reader.question("\nInforme a string a ser reduzida: ", async (response) => {
         reader.close();
         return resolve(response);
       })

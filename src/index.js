@@ -3,34 +3,37 @@ const result = require('./result.js');
 const rules = require('./rules.js');
 const reducer = require('./reducer.js');
 const validation = require('./validation.js');
+const fc = require('./consoleFontColors.js');
 
 async function start() {
   const string = await interface();
 
-  const regex = /[^a-c]/;
-  const validated = validation(string, regex);
+  const validationRegex = /[^a-c]/;
+  const isValid = validation(string, validationRegex);
 
-  if(validated){
-    console.log("String: ", string);
+  if(isValid){
+    const res = result(string, reducer, rules);
 
-    const res = result(string, reducer, rules)
-    const message = `\nString original: ${res.originalString}, \nString final: ${res.finalString},\nTamanho da string final: ${res.finalStringLength}\n`;
-      
+    const message = `
+      \nString original: ${fc(res.originalString, 'green')},
+      \nString final: ${fc(res.finalString, 'green')},
+      \nTamanho da string final: ${fc(res.finalStringLength, 'green')}
+    `;
+    
     console.log(message);
   } else {
-    const message = `\nApenas strings com as letras a, b e c são permitidas.\n`;
-    console.log(message);
+    const message = `\nApenas strings com as letras a, b e c são permitidas.`;
+    console.log(fc(message, 'red'));
   }
-
+  console.log("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n")
   start();
 }
 
 start();
 
+// var red, blue, reset;
+// red = '\u001b[31m';
+// blue = '\u001b[34m';
+// reset = '\u001b[0m';
 
-// const interfaceCli = require('./interfaceCli.js');
-// const response = require('./response.js');
-// const rules = require('./rules.js');
-// const reducer = require('./reducer.js');
-
-// interfaceCli(response, reducer, rules);
+// console.log(red +"Aqui esta o texto em vermelho. "+ blue +"Aqui esta o texto em vermelho. "+ reset +"Aqui estamos dando reset nas cores do bash.")
