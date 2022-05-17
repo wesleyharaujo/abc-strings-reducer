@@ -1,3 +1,11 @@
+## Como rodar o projeto
+
+$ npm start
+
+## Como rodar os testes do projeto
+
+$ npm run test
+
 ## REGRAS #
 
 Caracteres iguais que sejam adjacentes devem ser mantidos.
