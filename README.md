@@ -26,7 +26,7 @@ input é válido e então realizar o processo.
 
 ## EXEMPLOS:
 
-'aabc' -> 'acc' -> 'bc' -> 'b'
+'aabc' -> 'acc' -> 'bc' -> 'a'
 
 'abc' -> 'cc'
 
