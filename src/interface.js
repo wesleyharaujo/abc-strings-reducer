@@ -11,7 +11,7 @@ async function interfaceCli(){
     return (
       reader.question("\nInforme a string a ser reduzida: ", async (response) => {
         reader.close();
-        return resolve(response);
+        return resolve(response.toLowerCase());
       })
     );
   });
