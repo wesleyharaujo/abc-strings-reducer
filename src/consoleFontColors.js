@@ -1,8 +1,7 @@
 const colors = {
-  reset: "\x1b[0m",
-  red: "\x1b[31m",
-  blue: "\x1b[34m",
-  green: "\x1b[32m"
+  reset: "\u001b[0m",
+  red: "\u001b[31;1m",
+  green: "\u001b[32;1m"
 };
 
 function fc(string, color) {
